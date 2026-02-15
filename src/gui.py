@@ -41,7 +41,7 @@ class App(ctk.CTk):
 
         # Setup Model Path
         current_dir = os.path.dirname(os.path.abspath(__file__))
-        model_path = os.path.join(current_dir, '..', 'models', 'segmentasi_manusia.onnx')
+        model_path = os.path.join(current_dir, '..', 'models', 'tiny_reMBG.onnx')
 
         # Initialize Engine
         try:
