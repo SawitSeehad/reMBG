@@ -1,33 +1,43 @@
-
 # reMBG (Offline Edition)
 
 ![reMBG Logo](assets/icon.png)
 
-**reMBG** is a professional, privacy-focused desktop application to remove person image backgrounds automatically using AI. It runs 100% offline on your machine.
+![Version](https://github.com/SawitSeehad/reMBG?label=version&color=blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
 
-**Key Features:**
-- 🔒 **100% Offline & Private:** Your images never leave your computer. No API keys, no cloud uploads.
-- ⚡ **Lightweight:** Optimized for CPU inference (no expensive GPU required).
-- 🚀 **Native Experience:** Installs directly as a Desktop Application with a custom icon.
+**reMBG** is a specialized, privacy-first desktop application designed to **remove backgrounds specifically from human portraits** (Selfies, ID photos, Group photos).
+
+Unlike general-purpose tools, reMBG is optimized for **Human Segmentation**. It runs **100% offline** on your computer, ensuring that your personal photos are processed locally and **never uploaded to the cloud**.
+
+---
+
+## ✨ Key Features
+
+- 👤 **Human-Centric AI:** Fine-tuned to detect human hair, poses, and silhouettes with high precision.
+    > *Note: This model is specialized for people. It may not perform well on inanimate objects (cars, furniture, products).*
+- 🔒 **Maximum Privacy:** Your photos never leave your device. No API keys, no internet connection required, no data collection.
+- ⚡ **Lightweight & Fast:** Powered by ONNX Runtime, optimized for standard CPUs (No expensive GPU needed).
+- 🚀 **Native Experience:** Installs as a standalone Desktop App with a custom icon.
 - 🖥️ **Cross-Platform:** Works seamlessly on Windows and Linux.
 
 ---
 
 ## 📋 Prerequisites
 
-Before running this application, please ensure you have **Python** installed on your system.
-- **Windows:** Download from Microsoft Store or python.org.
-- **Linux:** `sudo apt install python3-full` (Ubuntu/Debian) or equivalent.
+Before running this application, please ensure you have **Python 3.10+** installed.
+- **Windows:** Download from [python.org](https://www.python.org/downloads/) or Microsoft Store.
+- **Linux:** `sudo apt install python3-full` (Ubuntu/Debian).
 
 ---
 
-## 🚀 Installation & Setup
+## 🚀 Installation (One-Click Setup)
 
-You don't need to manually install libraries. We provide a **One-Click Setup** script that handles everything and creates a Desktop Shortcut for you.
+We provide an automated installer that handles dependencies and creates a Desktop Shortcut for you.
 
 ### 🪟 For Windows Users
 
-1.  Open the folder.
+1.  Download and extract the folder.
 2.  Double-click **`SETUP_WINDOWS.bat`**.
 3.  Wait for the installation to finish.
 4.  🎉 **Success!** A shortcut named **reMBG** will appear on your Desktop.
@@ -52,10 +62,10 @@ reMBG/
 │
 ├── assets/
 │   ├── icon.ico          # Windows Icon
-│   └── icon.png          # Linux/App Icon
+│   └── icon.png          # App Icon
 │
 ├── models/
-│   └── segmentasi_manusia.onnx   # The AI Brain (Protected Model)
+│   └── segmentasi_manusia.onnx   # The AI Brain (Human Segmentation Only)
 │
 ├── src/
 │   ├── app.py            # Backend Logic
@@ -77,7 +87,7 @@ This project is protected by a **Dual License** structure:
 
 ### 1. Application Code (Source Code)
 
-The source code (Python scripts, installers) is licensed under the **MIT License**.
+The source code (Python scripts, installers, GUI) is licensed under the **MIT License**.
 You are free to use, modify, and distribute the code, provided you include the original copyright notice.
 
 ### 2. AI Model (`segmentasi_manusia.onnx`)
@@ -91,4 +101,3 @@ The trained AI model provided in this repository is licensed under **CC BY-NC-SA
 ---
 
 **Copyright © 2026 Saw it See had. All Rights Reserved.**
-
