@@ -65,7 +65,7 @@ pvBG/
 │   └── icon.png          # App Icon
 │
 ├── models/
-│   └── segmentasi_manusia.onnx   # The AI Brain (Human Segmentation Only)
+│   └── pvBG.onnx   # The AI Brain
 │
 ├── src/
 │   ├── app.py            # Backend Logic

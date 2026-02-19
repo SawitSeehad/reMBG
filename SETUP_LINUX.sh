@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "========================================================"
-echo "     reMBG - AUTOMATIC SETUP"
+echo "     pvBG - AUTOMATIC SETUP"
 echo "     (Linux Edition)"
 echo "========================================================"
 
@@ -22,16 +22,16 @@ echo "[2/3] Installing dependencies..."
 source venv/bin/activate
 pip install -r requirements.txt
 
-echo "[3/3] Creating reMBG Launcher..."
+echo "[3/3] Creating pvBG Launcher..."
 
-DESKTOP_FILE="$HOME/Desktop/reMBG.desktop"
+DESKTOP_FILE="$HOME/Desktop/pvBG.desktop"
 ICON_PATH="$PROJECT_DIR/assets/icon.png"  
 
 cat > "$DESKTOP_FILE" <<EOL
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=reMBG
+Name=pvBG
 Comment=Offline Background Remover
 Exec=$PROJECT_DIR/venv/bin/python3 $PROJECT_DIR/src/gui.py
 Icon=$ICON_PATH
@@ -44,7 +44,7 @@ chmod +x "$DESKTOP_FILE"
 
 echo ""
 echo "========================================================"
-echo "     SUCCESS! reMBG INSTALLED."
+echo "     SUCCESS! pvBG INSTALLED."
 echo "========================================================"
-echo "Please check your Desktop for 'reMBG'."
+echo "Please check your Desktop for 'pvBG'."
 echo "Right-Click -> 'Allow Launching' if needed."
