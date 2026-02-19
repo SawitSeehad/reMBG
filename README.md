@@ -1,14 +1,14 @@
-# reMBG (Offline Edition)
+# pvBG
 
-![reMBG Logo](assets/icon.png)
+![pvBG Logo](assets/icon.png)
 
 ![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
 
-**reMBG** is a specialized, privacy-first desktop application designed to **remove backgrounds specifically from human portraits** (Selfies, ID photos, Group photos).
+**pvBG** is a specialized, privacy-first desktop application designed to **remove backgrounds specifically from human portraits** (Selfies, ID photos, Group photos).
 
-Unlike general-purpose tools, reMBG is optimized for **Human Segmentation**. It runs **100% offline** on your computer, ensuring that your personal photos are processed locally and **never uploaded to the cloud**.
+Unlike general-purpose tools, pvBG is optimized for **Human Segmentation**. It runs **100% offline** on your computer, ensuring that your personal photos are processed locally and **never uploaded to the cloud**.
 
 ---
 
@@ -40,7 +40,7 @@ We provide an automated installer that handles dependencies and creates a Deskto
 1.  Download and extract the folder.
 2.  Double-click **`SETUP_WINDOWS.bat`**.
 3.  Wait for the installation to finish.
-4.  🎉 **Success!** A shortcut named **reMBG** will appear on your Desktop.
+4.  🎉 **Success!** A shortcut named **BG** will appear on your Desktop.
 5.  Click the Desktop icon to start the app.
 
 ### 🐧 For Linux Users
@@ -50,7 +50,7 @@ We provide an automated installer that handles dependencies and creates a Deskto
     ```bash
     bash SETUP_LINUX.sh
     ```
-3.  🎉 **Success!** A launcher named **reMBG** will appear on your Desktop.
+3.  🎉 **Success!** A launcher named **BG** will appear on your Desktop.
 4.  *Note:* You might need to right-click the icon and select **"Allow Launching"**.
 
 ---
@@ -58,7 +58,7 @@ We provide an automated installer that handles dependencies and creates a Deskto
 ## 📂 Project Structure
 
 ```text
-reMBG/
+pvBG/
 │
 ├── assets/
 │   ├── icon.ico          # Windows Icon
