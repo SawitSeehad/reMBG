@@ -680,6 +680,7 @@ class App(TkinterDnD.Tk if DND_AVAILABLE else ctk.CTk):
 
         self._last_xy = (event.x, event.y)
         self._refresh_canvas_from_cache()
+        self._on_mouse_move(event)
 
     def _on_brush_release(self, event):
         """Handle mouse release — end of stroke."""
