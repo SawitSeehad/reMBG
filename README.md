@@ -23,6 +23,15 @@ Unlike general-purpose tools, pvBG is optimized for **Human Segmentation**. It r
 
 ---
 
+
+## 🆕 What's New in v1.2.0
+- **Enhanced Accuracy:** Improved human segmentation for distant subjects.
+- **Manual Editing:** Added **Restore** and **Eraser** tools for fine-tuning results.
+- **Improved UX:** Fixed brush delays and added a **Clear** button for faster workflow.
+
+---
+
+
 ## 📋 Prerequisites
 
 Before running this application, please ensure you have **Python 3.10+** installed.
