@@ -336,6 +336,13 @@ class App(TkinterDnD.Tk if DND_AVAILABLE else ctk.CTk):
 
     def _on_drop(self, event):
         """Handle a file drop event."""
+        if self._current_input_path is not None:
+            messagebox.showwarning(
+                "Workspace Not Empty",
+                "Please clear the current image and result before loading a new one."
+            )
+            return
+
         path = event.data.strip().strip("{}").split("} {")[0]
         if os.path.isfile(path) and path.lower().endswith(SUPPORTED_EXT):
             self._load_image(path)
@@ -344,13 +351,22 @@ class App(TkinterDnD.Tk if DND_AVAILABLE else ctk.CTk):
 
     def open_image(self):
         """Open file manager dialog and load the selected image."""
+        if self._current_input_path is not None:
+            messagebox.showwarning(
+                "Workspace Not Empty",
+                "Please clear the current image and result before loading a new one."
+            )
+            return
+
         if not self.engine:
             messagebox.showerror("Engine Error", "pvBG model is not loaded.")
             return
+        
         path = filedialog.askopenfilename(
             title="Select an image",
             filetypes=[("Image files", "*.jpg *.jpeg *.png *.webp *.bmp"), ("All files", "*.*")]
         )
+
         if path:
             self._load_image(path)
 
@@ -384,7 +400,7 @@ class App(TkinterDnD.Tk if DND_AVAILABLE else ctk.CTk):
         self.lbl_res.configure(image=None, text="Ready to process.\nClick ▶ Remove Background.")
         self.btn_save.configure(state="disabled")
         self.btn_repair.configure(state="disabled")
-        self.btn_process.configure(state="normal")
+        self.btn_process.configure(state="normal", text="▶  Remove Background")
         self.btn_clear.configure(state="normal")
 
         w, h = img.size
@@ -437,7 +453,7 @@ class App(TkinterDnD.Tk if DND_AVAILABLE else ctk.CTk):
         self._display_result_label()
         self.btn_save.configure(state="normal")
         self.btn_repair.configure(state="normal")
-        self.btn_process.configure(state="normal", text="▶  Remove Background")
+        self.btn_process.configure(state="disabled", text="✅  Processed")
         self.btn_open.configure(state="normal")
 
         w, h = self.current_result.size
@@ -524,7 +540,7 @@ class App(TkinterDnD.Tk if DND_AVAILABLE else ctk.CTk):
         self._display_result_label()
 
         self.btn_repair.configure(text="🖌  Repair Mask", fg_color="#6a1b9a", hover_color="#7b1fa2")
-        self.btn_process.configure(state="normal")
+        self.btn_process.configure(state="disabled", text="✅  Processed")
         self.btn_open.configure(state="normal")
 
         if save:
@@ -768,11 +784,13 @@ class App(TkinterDnD.Tk if DND_AVAILABLE else ctk.CTk):
         """Save the result RGBA image as a PNG file."""
         if not self.current_result:
             return
+        
         path = filedialog.asksaveasfilename(
             title="Save result as PNG",
             defaultextension=".png",
             filetypes=[("PNG image", "*.png")]
         )
+
         if path:
             try:
                 self.current_result.save(path, format="PNG")
