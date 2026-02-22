@@ -2,7 +2,7 @@
 
 ![pvBG Logo](assets/icon.png)
 
-![Version](https://img.shields.io/badge/version-v1.1.1-blue.svg)
+![Version](https://img.shields.io/badge/version-v1.2.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
 
